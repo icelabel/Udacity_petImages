@@ -1,0 +1,104 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                     Dog_02.jpg  label:                        dog
+ 2 key:               Red_Panda_01.jpg  label:                  red panda
+ 3 key:                     Dog_01.jpg  label:                        dog
+ 4 key:                 Jasmine_01.jpg  label:                    jasmine
+
+     MATCH:
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:              eskimo dog, husky
+
+              Red_Panda_01.jpg: 
+Real:                  red panda   Classifier: lesser panda, red panda, panda, bear cat, cat bear, ailurus fulgens
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:              eskimo dog, husky
+
+ NOT A MATCH:
+
+                Jasmine_01.jpg: 
+Real:                    jasmine   Classifier:                          daisy
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+
+     MATCH:
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:              eskimo dog, husky  
+PetLabelDog: 1  ClassLabelDog: 1
+
+              Red_Panda_01.jpg: 
+Real:                  red panda   Classifier: lesser panda, red panda, panda, bear cat, cat bear, ailurus fulgens  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:              eskimo dog, husky  
+PetLabelDog: 1  ClassLabelDog: 1
+
+ NOT A MATCH:
+
+                Jasmine_01.jpg: 
+Real:                    jasmine   Classifier:                          daisy  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+
+
+----------------------------------------------------------------------------------
+*** Results Summary for CNN Model Architecture  VGG ***
+----------------------------------------------------------------------------------
+
+
+
+                           N Images:   4
+                       N Dog Images:   2
+                   N NON-Dog Images:   2
+
+
+                          pct_match:  75.00%
+                   pct_correct_dogs: 100.00%
+                  pct_correct_breed: 100.00%
+                pct_correct_notdogs: 100.00%
+
+
+
+----------------------------------------------------------------------------------
+---- Below are the things I personally find interesting and want to print out ----
+-------  because I find key names inadequate in fully describing the stats -------
+----------------------------------------------------------------------------------
+  N Correctly-Classified Dog Breeds:   2
+  N Correctly-Classified ANY Breeds:   3
+
+
+
+*** Confusion Matrix ( dogs vs. NON-dogs ) ***
+                                 actual dogs       actual NON-dogs
+       classified dogs                     2                     0
+   classified NON-dogs                     0                     2
+
+
+
+                                                out of all     4          imgs                        ,     3 correct in judging the breed      :  75.00%  pct_match           
+                                                out of all     2 dog      imgs                        ,     2 correct in judging the breed      : 100.00%  pct_correct_breed   
+Recall      (    dog) = Sensitivity (    dog):  out of all     2 dog      imgs                        ,     2 correct in judging dog/NON-dog    : 100.00%  pct_correct_dogs    
+Recall      (not dog) = Specifity   (    dog):  out of all     2 NON-dog  imgs                        ,     2 correct in judging dog/NON-dog    : 100.00%  pct_correct_notdogs 
+                        Precision   (    dog):  out of all     2          imgs classified as dog      ,     2 correct in judging dog/NON-dog    : 100.00%                      
+                     Accuracy  (dog/NON-dog ):  out of all     4          imgs                        ,     4 correct in judging dog/NON-dog    : 100.00%                      
+
+** Total Elapsed Runtime: 0:0:8

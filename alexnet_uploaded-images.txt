@@ -1,0 +1,110 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                     Dog_02.jpg  label:                        dog
+ 2 key:               Red_Panda_01.jpg  label:                  red panda
+ 3 key:                     Dog_01.jpg  label:                        dog
+ 4 key:                 Jasmine_01.jpg  label:                    jasmine
+
+     MATCH:
+
+              Red_Panda_01.jpg: 
+Real:                  red panda   Classifier: lesser panda, red panda, panda, bear cat, cat bear, ailurus fulgens
+
+ NOT A MATCH:
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:      borzoi, russian wolfhound
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:      borzoi, russian wolfhound
+
+                Jasmine_01.jpg: 
+Real:                    jasmine   Classifier:              cabbage butterfly
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+     MATCH:
+
+              Red_Panda_01.jpg: 
+Real:                  red panda   Classifier: lesser panda, red panda, panda, bear cat, cat bear, ailurus fulgens  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:      borzoi, russian wolfhound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:      borzoi, russian wolfhound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                Jasmine_01.jpg: 
+Real:                    jasmine   Classifier:              cabbage butterfly  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+
+
+----------------------------------------------------------------------------------
+*** Results Summary for CNN Model Architecture  ALEXNET ***
+----------------------------------------------------------------------------------
+
+
+
+                           N Images:   4
+                       N Dog Images:   2
+                   N NON-Dog Images:   2
+
+
+                          pct_match:  25.00%
+                   pct_correct_dogs: 100.00%
+                  pct_correct_breed:   0.00%
+                pct_correct_notdogs: 100.00%
+
+
+
+Incorrectly-classified dog breed:
+Dog_02.jpg is a(n) dog, but is classified as a(n) borzoi, russian wolfhound.
+Dog_01.jpg is a(n) dog, but is classified as a(n) borzoi, russian wolfhound.
+
+
+
+----------------------------------------------------------------------------------
+---- Below are the things I personally find interesting and want to print out ----
+-------  because I find key names inadequate in fully describing the stats -------
+----------------------------------------------------------------------------------
+  N Correctly-Classified Dog Breeds:   0
+  N Correctly-Classified ANY Breeds:   1
+
+
+
+*** Confusion Matrix ( dogs vs. NON-dogs ) ***
+                                 actual dogs       actual NON-dogs
+       classified dogs                     2                     0
+   classified NON-dogs                     0                     2
+
+
+
+                                                out of all     4          imgs                        ,     1 correct in judging the breed      :  25.00%  pct_match           
+                                                out of all     2 dog      imgs                        ,     0 correct in judging the breed      :   0.00%  pct_correct_breed   
+Recall      (    dog) = Sensitivity (    dog):  out of all     2 dog      imgs                        ,     2 correct in judging dog/NON-dog    : 100.00%  pct_correct_dogs    
+Recall      (not dog) = Specifity   (    dog):  out of all     2 NON-dog  imgs                        ,     2 correct in judging dog/NON-dog    : 100.00%  pct_correct_notdogs 
+                        Precision   (    dog):  out of all     2          imgs classified as dog      ,     2 correct in judging dog/NON-dog    : 100.00%                      
+                     Accuracy  (dog/NON-dog ):  out of all     4          imgs                        ,     4 correct in judging dog/NON-dog    : 100.00%                      
+
+** Total Elapsed Runtime: 0:0:1
